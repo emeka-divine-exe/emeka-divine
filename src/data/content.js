@@ -99,7 +99,7 @@ export const projects = [
   category: "Business Website · Full Stack",
   description:
     "A complete website for a building contractor and renovation company — hero, services carousel, about section, completed projects gallery, client testimonials, and a booking call-to-action, all in one polished site.",
-  image: "/assets/images/projects/divine-homes-cover.jpg",
+  image: "/assets/images/projects/divine-homes-cover.png",
   liveUrl: "https://divine-homes.netlify.app",
   screenshot: "/assets/images/projects/divine-homes-screenshot.jpg",
 },
@@ -119,9 +119,9 @@ export const projects = [
     category: "Brand Identity",
     description:
       "Logo and brand identity design for a food business — wordmark, icon variations, and a consistent visual system for use across packaging and social media.",
-    image: "/assets/images/projects/jovis-eatery-cover.jpg",
+    image: "/assets/images/projects/jovis-eatery-cover.png",
     liveUrl: null,
-    screenshot: "/assets/images/projects/jovis-eatery-screenshot.jpg",
+    screenshot: "/assets/images/projects/jovis-eatery-screenshot.png",
   },
   {
     id: "church-media",
@@ -129,9 +129,9 @@ export const projects = [
     category: "Graphic Design",
     description:
       "Ongoing flyer and poster design work as part of a church media team — creating promotional graphics for weekly services and special events.",
-    image: "/assets/images/projects/church-media-cover.jpg",
+    image: "/assets/images/projects/church-media-cover.png",
     liveUrl: null,
-    screenshot: "/assets/images/projects/church-media-screenshot.jpg",
+    screenshot: "/assets/images/projects/church-media-screenshot.png",
   },
 ];
 
