@@ -1,0 +1,25 @@
+{
+  "name": "divine-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+"dependencies": {
+  "react": "^19.1.5",
+  "react-dom": "^19.1.5",
+  "framer-motion": "^12.0.0",
+  "lucide-react": "^0.544.0",
+  "@fontsource/archivo-black": "^5.2.9",
+  "@fontsource/inter": "^5.2.9"
+},
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.5",
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^8.0.14"
+  }
+}
