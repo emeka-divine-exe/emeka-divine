@@ -94,6 +94,16 @@ export const projects = [
     screenshot: "/assets/images/projects/logscity-screenshot.jpg",
   },
   {
+  id: "divine-homes",
+  title: "Divine Homes",
+  category: "Business Website · Full Stack",
+  description:
+    "A complete website for a building contractor and renovation company — hero, services carousel, about section, completed projects gallery, client testimonials, and a booking call-to-action, all in one polished site.",
+  image: "/assets/images/projects/divine-homes-cover.jpg",
+  liveUrl: "https://divine-homes.netlify.app",
+  screenshot: "/assets/images/projects/divine-homes-screenshot.jpg",
+},
+  {
     id: "taste-haven",
     title: "Taste Haven",
     category: "Restaurant Website",
