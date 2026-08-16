@@ -8,8 +8,8 @@
   --color-accent: #FC6E20;
 
   /* Fonts */
-  --font-display: "Archivo Black", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Onest Variable", sans-serif;
+  --font-body: "Public Sans", sans-serif;
 }
 
 @layer base {
