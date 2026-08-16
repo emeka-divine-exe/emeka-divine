@@ -16,7 +16,6 @@ export default function Hero() {
   return (
     <section id="home" className="relative">
       <div className="relative w-full min-h-[70vh] min-h-[70dvh] md:min-h-[80vh] md:min-h-[80dvh] overflow-hidden">
-        {/* Background photo with entrance animation */}
         <motion.img
           src={heroBg}
           alt={`Portrait of ${profile.fullName}`}
@@ -27,10 +26,8 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-bg/10" />
 
-        {/* Content: two-column on desktop, stacked on mobile */}
         <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-10 pb-10 md:pb-14">
           <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-12 md:items-end">
-            {/* Left: badge + headline */}
             <div className="flex flex-col gap-4">
               <motion.span
                 variants={fadeUp}
@@ -54,7 +51,6 @@ export default function Hero() {
               </motion.h1>
             </div>
 
-            {/* Right: paragraph + CTA, bottom-aligned with left column */}
             <div className="flex flex-col gap-5 md:items-start">
               <motion.p
                 variants={fadeUp}
@@ -84,7 +80,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Giant wordmark, below the photo */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
