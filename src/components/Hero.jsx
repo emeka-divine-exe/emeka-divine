@@ -266,6 +266,8 @@ export default function Hero() {
     whitespace-nowrap
     text-[clamp(5rem,17vw,16rem)]
     font-medium
+    flex
+    justify-center
     leading-[0.72]
     tracking-[-0.08em]
   "
