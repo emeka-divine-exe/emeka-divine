@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Divine",
+  name: "Emeka Divine",
   fullName: "Emeka Divine",
   role: "Frontend Developer & Visual Designer",
   location: "Lagos, Nigeria",
