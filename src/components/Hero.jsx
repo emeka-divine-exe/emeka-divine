@@ -108,6 +108,8 @@ export default function Hero() {
             className="
               relative
               min-w-0
+              md:translate-y-2
+              lg:translate-y-3
 
               md:pt-0
             "
