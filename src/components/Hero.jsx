@@ -260,19 +260,19 @@ export default function Hero() {
             md:mt-10
             lg:mt-8
           "
-        >
-          <div
-            className="
-              font-display
-              whitespace-nowrap
-              text-[clamp(5rem,17vw,16rem)]
-              font-medium
-              leading-[0.72]
-              tracking-[-0.08em]
-            "
-          >
-            {profile.name}
-          </div>
+        ><div
+  className="
+    font-display
+    whitespace-nowrap
+    text-[clamp(5rem,17vw,16rem)]
+    font-medium
+    leading-[0.72]
+    tracking-[-0.08em]
+  "
+>
+  <span className="md:hidden">{profile.name}</span>
+  <span className="hidden md:inline">{profile.fullName}</span>
+</div>
         </motion.div>
       </div>
     </section>
