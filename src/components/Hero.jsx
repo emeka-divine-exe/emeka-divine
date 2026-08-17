@@ -15,7 +15,13 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section id="home" className="relative">
-      <div className="relative w-full min-h-[70vh] min-h-[70dvh] md:min-h-[80vh] md:min-h-[80dvh] overflow-hidden">
+      <div 
+          style={{
+          position: 'relative',
+          width: '100%',
+          height: 'clamp(480px, 85dvh, 820px)',
+          overflow: 'hidden',
+        }}>
         <motion.img
           src={heroBg}
           alt={`Portrait of ${profile.fullName}`}
