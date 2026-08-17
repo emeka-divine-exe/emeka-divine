@@ -139,8 +139,8 @@ export default function Hero() {
             <h1
               className="
                 font-display
-                max-w-[680px]
-                text-[clamp(2.8rem,5vw,3.2rem)]
+                max-w-[580px]
+                text-[2rem]
                 font-medium
                 leading-[0.96]
                 tracking-[-0.055em]
