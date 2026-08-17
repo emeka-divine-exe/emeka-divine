@@ -140,7 +140,7 @@ export default function Hero() {
               className="
                 font-display
                 max-w-[680px]
-                text-[clamp(2.8rem,6vw,6rem)]
+                text-[clamp(2.8rem,6vw,4.8rem)]
                 font-medium
                 leading-[0.96]
                 tracking-[-0.055em]
@@ -161,7 +161,7 @@ export default function Hero() {
             }}
             className="
               min-w-0
-              max-w-[430px]
+              max-w-[350px]
               md:ml-auto
             "
           >
