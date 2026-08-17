@@ -8,16 +8,16 @@ export default function Hero() {
     <section
       className="
         relative
-        h-[760px]
+        h-[820px]
         w-full
         overflow-hidden
         bg-[#181818]
         text-white
 
         sm:h-[780px]
-        md:h-[680px]
-        lg:h-[620px]
-        xl:h-[650px]
+        md:h-[720px]
+        lg:h-[760px]
+        xl:h-[780px]
       "
     >
       {/* Background */}
@@ -29,9 +29,12 @@ export default function Hero() {
             h-full
             w-full
             object-cover
-            object-[55%_22%]
+            object-[35%_72%]
 
+            sm:object-[35%_68%]
             md:object-center
+            lg:object-center
+            xl:object-center
           "
         />
       </div>
@@ -67,7 +70,7 @@ export default function Hero() {
         <div
           className="
             grid
-            items-start
+            items-end
             gap-7
 
             md:grid-cols-[minmax(0,1fr)_minmax(260px,400px)]
@@ -89,8 +92,8 @@ export default function Hero() {
             }}
             className="
               min-w-0
-              md:-translate-y-2
-              lg:-translate-y-3
+              md:-translate-y-6
+              lg:-translate-y-8
             "
           >
             {profile.available && (
@@ -119,7 +122,15 @@ export default function Hero() {
                   "
                 />
 
-                <span className="font-body text-xs font-medium text-white/90 md:text-sm">
+                <span
+                  className="
+                    font-body
+                    text-xs
+                    font-medium
+                    text-white/90
+                    md:text-sm
+                  "
+                >
                   Available for Work
                 </span>
               </div>
@@ -134,6 +145,7 @@ export default function Hero() {
                 leading-[0.96]
                 tracking-[-0.055em]
 
+                md:max-w-[380px]
                 md:text-3xl
               "
             >
@@ -162,7 +174,6 @@ export default function Hero() {
                 text-sm
                 leading-[1.55]
                 text-white/85
-
                 md:text-base
               "
             >
