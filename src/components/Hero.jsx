@@ -21,7 +21,7 @@ export default function Hero() {
       "
     >
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={heroBg}
           alt=""
@@ -29,7 +29,10 @@ export default function Hero() {
             h-full
             w-full
             object-cover
-            object-center
+            object-[center_24%]
+
+            sm:object-[center_28%]
+            md:object-center
           "
         />
 
@@ -42,7 +45,7 @@ export default function Hero() {
             absolute
             inset-x-0
             bottom-0
-            h-[35%]
+            h-[40%]
             bg-gradient-to-t
             from-[#181818]
             via-[#181818]/70
@@ -85,10 +88,10 @@ export default function Hero() {
             items-end
             gap-7
 
-            md:grid-cols-[minmax(0,1fr)_minmax(260px,400px)]
+            md:grid-cols-[minmax(0,1fr)_minmax(260px,350px)]
             md:gap-8
 
-            lg:grid-cols-[minmax(0,1fr)_minmax(300px,430px)]
+            lg:grid-cols-[minmax(0,1fr)_minmax(300px,360px)]
             lg:gap-12
 
             xl:gap-16
@@ -102,8 +105,14 @@ export default function Hero() {
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="min-w-0"
+            className="
+              relative
+              min-w-0
+
+              md:pt-0
+            "
           >
+            {/* Available badge */}
             {profile.available && (
               <div
                 className="
@@ -117,6 +126,9 @@ export default function Hero() {
                   py-2
                   backdrop-blur-md
 
+                  md:absolute
+                  md:bottom-full
+                  md:left-0
                   md:mb-2
                 "
               >
@@ -141,10 +153,15 @@ export default function Hero() {
                 font-display
                 max-w-[280px]
                 text-4xl
-                md:text-3xl
                 font-medium
                 leading-[0.96]
                 tracking-[-0.055em]
+
+                md:max-w-[300px]
+                md:text-[2rem]
+
+                lg:max-w-[320px]
+                lg:text-[2.15rem]
               "
             >
               {profile.heroTagline}
@@ -162,8 +179,11 @@ export default function Hero() {
             }}
             className="
               min-w-0
-              max-w-[350px]
+              max-w-[330px]
               md:ml-auto
+              md:self-start
+
+              lg:max-w-[350px]
             "
           >
             <p
