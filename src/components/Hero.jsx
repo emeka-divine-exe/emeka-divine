@@ -23,20 +23,27 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={heroBg}
-          alt=""
-          className="
-            h-full
-            w-full
-            object-cover
-            object-[35%_72%]
+  src={heroBg}
+  alt=""
+  className="
+    absolute
+    inset-x-0
+    top-[-170px]
+    h-[calc(100%+170px)]
+    w-full
+    object-cover
+    object-[48%_center]
 
-            sm:object-[35%_68%]
-            md:object-center
-            lg:object-center
-            xl:object-center
-          "
-        />
+    sm:top-[-140px]
+    sm:h-[calc(100%+140px)]
+    sm:object-[48%_center]
+
+    md:static
+    md:h-full
+    md:w-full
+    md:object-center
+  "
+/>
       </div>
 
       {/* Hero content */}
