@@ -152,7 +152,7 @@ export default function Hero() {
                 leading-[0.96]
                 tracking-[-0.055em]
 
-                md:max-w-[380px]
+                md:max-w-[300px]
                 md:text-3xl
               "
             >
