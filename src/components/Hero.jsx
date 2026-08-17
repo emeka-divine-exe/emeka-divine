@@ -140,7 +140,7 @@ export default function Hero() {
               className="
                 font-display
                 max-w-[680px]
-                text-[clamp(2.8rem,6vw,4.8rem)]
+                text-[clamp(2rem,5vw,4rem)]
                 font-medium
                 leading-[0.96]
                 tracking-[-0.055em]
