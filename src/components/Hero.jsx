@@ -85,7 +85,7 @@ export default function Hero() {
         <div
           className="
             grid
-            items-end
+            items-start
             gap-7
 
             md:grid-cols-[minmax(0,1fr)_minmax(260px,350px)]
