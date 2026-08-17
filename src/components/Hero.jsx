@@ -107,7 +107,7 @@ export default function Hero() {
             {profile.available && (
               <div
                 className="
-                  mb-4
+                  mb-1.5
                   inline-flex
                   items-center
                   gap-2
@@ -117,7 +117,7 @@ export default function Hero() {
                   py-2
                   backdrop-blur-md
 
-                  md:mb-5
+                  md:mb-2
                 "
               >
                 <span
@@ -140,7 +140,8 @@ export default function Hero() {
               className="
                 font-display
                 max-w-[280px]
-                text-[2rem]
+                text-4xl
+                md:text-3xl
                 font-medium
                 leading-[0.96]
                 tracking-[-0.055em]
