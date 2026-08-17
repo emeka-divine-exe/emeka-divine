@@ -8,20 +8,20 @@ export default function Hero() {
     <section
       className="
         relative
-        h-[820px]
+        h-[760px]
         w-full
         overflow-hidden
         bg-[#181818]
         text-white
 
         sm:h-[780px]
-        md:h-[720px]
-        lg:h-[760px]
-        xl:h-[780px]
+        md:h-[680px]
+        lg:h-[620px]
+        xl:h-[650px]
       "
     >
       {/* Background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0">
         <img
           src={heroBg}
           alt=""
@@ -29,27 +29,9 @@ export default function Hero() {
             h-full
             w-full
             object-cover
-            object-[center_24%]
+            object-[55%_22%]
 
-            sm:object-[center_28%]
             md:object-center
-          "
-        />
-
-        {/* Dark image treatment */}
-        <div className="absolute inset-0 bg-black/35" />
-
-        {/* Bottom fade */}
-        <div
-          className="
-            absolute
-            inset-x-0
-            bottom-0
-            h-[40%]
-            bg-gradient-to-t
-            from-[#181818]
-            via-[#181818]/70
-            to-transparent
           "
         />
       </div>
@@ -88,10 +70,10 @@ export default function Hero() {
             items-start
             gap-7
 
-            md:grid-cols-[minmax(0,1fr)_minmax(260px,350px)]
+            md:grid-cols-[minmax(0,1fr)_minmax(260px,400px)]
             md:gap-8
 
-            lg:grid-cols-[minmax(0,1fr)_minmax(300px,360px)]
+            lg:grid-cols-[minmax(0,1fr)_minmax(300px,430px)]
             lg:gap-12
 
             xl:gap-16
@@ -106,15 +88,11 @@ export default function Hero() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="
-              relative
               min-w-0
-              md:translate-y-2
-              lg:translate-y-3
-
-              md:pt-0
+              md:-translate-y-2
+              lg:-translate-y-3
             "
           >
-            {/* Available badge */}
             {profile.available && (
               <div
                 className="
@@ -128,9 +106,6 @@ export default function Hero() {
                   py-2
                   backdrop-blur-md
 
-                  md:absolute
-                  md:bottom-full
-                  md:left-0
                   md:mb-2
                 "
               >
@@ -159,11 +134,7 @@ export default function Hero() {
                 leading-[0.96]
                 tracking-[-0.055em]
 
-                md:max-w-[300px]
-                md:text-[2rem]
-
-                lg:max-w-[320px]
-                lg:text-[2.15rem]
+                md:text-3xl
               "
             >
               {profile.heroTagline}
@@ -183,9 +154,6 @@ export default function Hero() {
               min-w-0
               max-w-[330px]
               md:ml-auto
-              md:self-start
-
-              lg:max-w-[350px]
             "
           >
             <p
@@ -194,6 +162,7 @@ export default function Hero() {
                 text-sm
                 leading-[1.55]
                 text-white/85
+
                 md:text-base
               "
             >
