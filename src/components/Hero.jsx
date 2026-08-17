@@ -22,11 +22,20 @@ export default function Hero() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: 'clamp(480px, 85dvh, 820px)',
+        position: 'relative',
       }}
-      className="w-full flex items-center"
+      className="w-full"
     >
-      {/* Parent wrapper: full width, fits content, horizontally centered */}
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-10 py-10">
+      {/* Content wrapper: sits 5% up from the bottom of the section */}
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: '5%',
+        }}
+        className="w-full max-w-5xl mx-auto px-6 md:px-10"
+      >
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
           {/* Div 1: badge + headline together */}
           <div className="flex flex-col gap-4">
