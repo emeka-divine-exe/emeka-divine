@@ -32,11 +32,11 @@ export default function Hero() {
             h-[calc(100%+170px)]
             w-full
             object-cover
-            object-[50%_center]
+            object-[46%_center]
 
             sm:top-[-140px]
             sm:h-[calc(100%+140px)]
-            sm:object-[46%_center]
+            sm:object-[48%_center]
 
             md:static
             md:h-full
