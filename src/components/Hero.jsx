@@ -36,7 +36,7 @@ export default function Hero() {
 
             sm:top-[-140px]
             sm:h-[calc(100%+140px)]
-            sm:object-[50%_center]
+            sm:object-[46%_center]
 
             md:static
             md:h-full
@@ -77,7 +77,7 @@ export default function Hero() {
         <div
           className="
             grid
-            items-end
+            item start
             gap-7
 
             md:grid-cols-[minmax(0,1fr)_minmax(260px,400px)]
