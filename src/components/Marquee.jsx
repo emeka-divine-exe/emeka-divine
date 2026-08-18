@@ -35,7 +35,7 @@ export default function Marquee() {
                 font-display
                 whitespace-nowrap
                 text-sm
-                md:text-normal
+                md:text-base
                 text-cream
                 font-medium
                 tracking-[-0.03em]
