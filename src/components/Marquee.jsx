@@ -15,7 +15,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <section className="w-full overflow-hidden bg-[#181818] py-6 text-white">
+    <section className="w-full overflow-hidden bg-bg py-6">
       <motion.div
         className="flex w-max items-center"
         animate={{ x: ["0%", "-50%"] }}
