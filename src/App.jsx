@@ -1,4 +1,5 @@
 import Nav from './components/Nav'
+import PageLoader from './components/PageLoader'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
 import About from './components/About'
@@ -14,6 +15,7 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <main>
+      <PageLoader />
       <Nav />
       <Hero />
       <Marquee />
