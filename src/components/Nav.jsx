@@ -37,7 +37,7 @@ export default function Nav() {
         <a
           href="/resume.pdf"
           download
-          className="flex items-center gap-2 bg-accent text-bg text-sm font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+          className="flex items-center gap-2 bg-accent text-cream text-sm font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
         >
           <Download size={16} strokeWidth={2.5} />
           Download Resume
@@ -89,7 +89,7 @@ export default function Nav() {
               href="/resume.pdf"
               download
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 bg-accent text-bg text-sm font-semibold px-5 py-3 rounded-full mt-4"
+              className="flex items-center justify-center gap-2 bg-accent text-cream text-sm font-semibold px-5 py-3 rounded-full mt-4"
             >
               <Download size={16} strokeWidth={2.5} />
               Download Resume
