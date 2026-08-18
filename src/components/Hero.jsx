@@ -99,8 +99,8 @@ export default function Hero() {
             }}
             className="
               min-w-0
-              md:-translate-y-6
-              lg:-translate-y-8
+              md:-translate-y-2
+              lg:-translate-y-4
             "
           >
             {profile.available && (
