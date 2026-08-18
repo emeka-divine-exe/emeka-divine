@@ -11,8 +11,8 @@ export default function Hero() {
         h-[820px]
         w-full
         overflow-hidden
-        bg-[#181818]
-        text-white
+        bg-bg
+        text-cream
 
         sm:h-[780px]
         md:h-[720px]
@@ -111,7 +111,7 @@ export default function Hero() {
                   items-center
                   gap-2
                   rounded-full
-                  bg-black/40
+                  bg-bg/40
                   px-4
                   py-2
                   backdrop-blur-md
@@ -124,9 +124,11 @@ export default function Hero() {
                     h-2
                     w-2
                     rounded-full
-                    bg-orange-500
-                    shadow-[0_0_12px_rgba(249,115,22,0.8)]
+                    bg-accent
                   "
+                  style={{
+                    boxShadow: "0 0 12px rgba(252, 110, 32, 0.8)",
+                  }}
                 />
 
                 <span
@@ -134,7 +136,7 @@ export default function Hero() {
                     font-body
                     text-xs
                     font-medium
-                    text-white/90
+                    text-cream/90
                     md:text-sm
                   "
                 >
@@ -180,7 +182,7 @@ export default function Hero() {
                 font-body
                 text-sm
                 leading-[1.55]
-                text-white/85
+                text-cream/85
                 md:text-base
               "
             >
@@ -196,16 +198,16 @@ export default function Hero() {
                 items-center
                 gap-3
                 rounded-full
-                bg-orange-500
+                bg-accent
                 py-2
                 pl-2
                 pr-6
                 font-body
                 text-sm
                 font-medium
-                transition-colors
+                transition-opacity
                 duration-300
-                hover:bg-orange-400
+                hover:opacity-90
 
                 md:mt-6
                 md:pr-7
@@ -221,8 +223,8 @@ export default function Hero() {
                   items-center
                   justify-center
                   rounded-full
-                  bg-white
-                  text-orange-500
+                  bg-cream
+                  text-accent
                   transition-transform
                   duration-300
                   group-hover:translate-x-1
