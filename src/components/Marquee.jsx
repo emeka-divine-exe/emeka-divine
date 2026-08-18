@@ -34,13 +34,10 @@ export default function Marquee() {
               className="
                 font-display
                 whitespace-nowrap
-                text-2xl
+                text-lg
+                text-cream
                 font-medium
                 tracking-[-0.03em]
-
-                sm:text-3xl
-                md:text-4xl
-                lg:text-5xl
               "
             >
               {item}
