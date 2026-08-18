@@ -15,7 +15,7 @@ export default function PageLoader() {
             delay: 1.5 + index * 0.12,
             ease: [0.76, 0, 0.24, 1],
           }}
-          className="absolute top-0 h-full bg-orange-500"
+          className="absolute top-0 h-full bg-accent"
           style={{
             left: `${index * 25}%`,
             width: "25%",
