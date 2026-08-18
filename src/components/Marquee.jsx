@@ -1,7 +1,64 @@
+import { motion } from "framer-motion";
+
+const items = [
+  "FRONTEND DEVELOPMENT",
+  "VISUAL DESIGN",
+  "RESPONSIVE WEBSITES",
+  "LANDING PAGES",
+  "REACT APPS",
+  "BRAND IDENTITY",
+  "DESIGN TO CODE",
+  "UI DESIGN",
+  "JAVASCRIPT",
+  "TAILWIND CSS",
+];
+
 export default function Marquee() {
   return (
-    <section className="p-8 border-y border-surface">
-      Marquee
+    <section className="w-full overflow-hidden bg-[#181818] py-6 text-white">
+      <motion.div
+        className="flex w-max items-center"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 25,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+      >
+        {[...items, ...items].map((item, index) => (
+          <div
+            key={index}
+            className="flex shrink-0 items-center"
+          >
+            <span
+              className="
+                font-display
+                whitespace-nowrap
+                text-2xl
+                font-medium
+                tracking-[-0.03em]
+
+                sm:text-3xl
+                md:text-4xl
+                lg:text-5xl
+              "
+            >
+              {item}
+            </span>
+
+            <span
+              className="
+                mx-6
+                text-orange-500
+                sm:mx-8
+                md:mx-10
+              "
+            >
+              •
+            </span>
+          </div>
+        ))}
+      </motion.div>
     </section>
-  )
+  );
 }
