@@ -34,8 +34,9 @@ export default function Marquee() {
               className="
                 font-display
                 whitespace-nowrap
-                text-lg
-                text-surface/90
+                text-sm
+                md:text-lg
+                text-surface/40
                 font-medium
                 tracking-[-0.03em]
               "
