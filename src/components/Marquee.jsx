@@ -47,7 +47,7 @@ export default function Marquee() {
             <span
               className="
                 mx-6
-                text-orange-500
+                text-accent
                 sm:mx-8
                 md:mx-10
               "
