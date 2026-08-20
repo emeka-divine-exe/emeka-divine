@@ -2,158 +2,191 @@ import { motion } from 'framer-motion'
 import { showcaseImages } from '../data/content'
 
 /*
- * Creates the curved / arched appearance.
+ * Each card has a fixed position in the arc.
  *
- * The middle card stays almost straight.
- * Cards further from the middle rotate and move vertically
- * to create the arc.
+ * The center card is straight.
+ * Cards progressively rotate and move vertically
+ * as they move away from the center.
  */
 function getArcStyle(index, total) {
-  const middle = (total - 1) / 2
-  const distance = index - middle
-
-  const rotate = distance * 8
-  const yOffset = Math.pow(Math.abs(distance), 1.15) * 18
+  const center = (total - 1) / 2
+  const distance = index - center
+  const normalizedDistance =
+    center === 0 ? 0 : distance / center
 
   return {
-    rotate,
-    yOffset,
+    rotate: normalizedDistance * 9,
+    y: Math.abs(normalizedDistance) ** 1.35 * 55,
   }
 }
 
-export default function ArcShowcase() {
+function CardSet() {
   const total = showcaseImages.length
 
-  /*
-   * Two identical sets are enough for a seamless infinite loop.
-   *
-   * We animate from 0 -> -50%.
-   * Because the track contains two identical sets,
-   * -50% equals exactly one complete set.
-   */
-  const loopedImages = [...showcaseImages, ...showcaseImages]
+  return (
+    <div className="flex shrink-0 items-start gap-[5vw] md:gap-10">
+      {showcaseImages.map((img, index) => {
+        const { rotate, y } = getArcStyle(index, total)
 
+        return (
+          <motion.div
+            key={`${img.src}-${index}`}
+            style={{
+              rotate,
+              y,
+            }}
+            className="
+              shrink-0
+
+              /* Mobile */
+              w-[29vw]
+              h-[38vw]
+              max-w-[145px]
+              max-h-[190px]
+
+              /* Tablet */
+              sm:w-[190px]
+              sm:h-[245px]
+
+              /* Desktop */
+              md:w-[235px]
+              md:h-[305px]
+
+              lg:w-[270px]
+              lg:h-[350px]
+
+              overflow-hidden
+              rounded-[18px]
+              md:rounded-[24px]
+
+              border
+              border-cream/10
+
+              bg-black/20
+              shadow-2xl
+
+              will-change-transform
+            "
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover"
+              draggable="false"
+            />
+          </motion.div>
+        )
+      })}
+    </div>
+  )
+}
+
+export default function ArcShowcase() {
   return (
     <section className="w-full bg-bg py-24 md:py-32 overflow-hidden">
-      {/* =========================
-          INFINITE ARC SHOWCASE
-      ========================== */}
-      <div className="relative w-full h-[330px] md:h-[430px] mb-20">
-        <motion.div
-          className="
-            absolute
-            left-1/2
-            top-4
-            flex
-            items-start
-            gap-6
-            md:gap-10
-            w-max
-          "
-          style={{
-            /*
-             * Start from the left edge of the viewport,
-             * while keeping the whole track centered.
-             */
-            transform: 'translateX(-50%)',
-          }}
-          animate={{
-            x: ['0%', '-50%'],
-          }}
-          transition={{
-            duration: 28,
-            ease: 'linear',
-            repeat: Infinity,
-          }}
-        >
-          {loopedImages.map((img, i) => {
-            const { rotate, yOffset } = getArcStyle(
-              i % total,
-              total
-            )
+      {/* =========================================
+          ARC GALLERY
+      ========================================== */}
 
-            return (
-              <motion.div
-                key={`${img.src}-${i}`}
-                style={{
-                  rotate,
-                  y: yOffset,
-                }}
-                className="
-                  shrink-0
-                  w-[190px]
-                  h-[245px]
+      <div
+        className="
+          relative
+          w-full
 
-                  sm:w-[210px]
-                  sm:h-[270px]
+          h-[280px]
+          sm:h-[330px]
+          md:h-[390px]
+          lg:h-[430px]
 
-                  md:w-[245px]
-                  md:h-[315px]
+          mb-16
+          md:mb-24
 
-                  lg:w-[275px]
-                  lg:h-[350px]
-
-                  rounded-[22px]
-                  md:rounded-[28px]
-
-                  overflow-hidden
-                  border
-                  border-cream/10
-                  bg-black/20
-                  shadow-2xl
-                "
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            )
-          })}
-        </motion.div>
-
-        {/* Optional soft fade on both sides.
-            This makes cards appear to enter/leave
-            the viewport naturally. */}
+          overflow-hidden
+        "
+      >
+        {/* Left fade */}
         <div
           className="
             pointer-events-none
             absolute
             inset-y-0
             left-0
-            w-16
-            md:w-32
+            z-20
+            w-[8vw]
+            min-w-[30px]
             bg-gradient-to-r
             from-bg
             to-transparent
-            z-10
           "
         />
 
+        {/* Right fade */}
         <div
           className="
             pointer-events-none
             absolute
             inset-y-0
             right-0
-            w-16
-            md:w-32
+            z-20
+            w-[8vw]
+            min-w-[30px]
             bg-gradient-to-l
             from-bg
             to-transparent
-            z-10
           "
         />
+
+        {/*
+         * The two CardSets are identical.
+         *
+         * Because the outer track has NO gap between the
+         * two sets, moving exactly -50% gives us a seamless
+         * infinite loop.
+         */}
+        <motion.div
+          className="
+            absolute
+            left-1/2
+            top-0
+            flex
+            w-max
+            items-start
+          "
+          initial={{ x: '-50%' }}
+          animate={{
+            x: [
+              '-50%',
+              'calc(-50% - 50%)',
+            ],
+          }}
+          transition={{
+            duration: 26,
+            ease: 'linear',
+            repeat: Infinity,
+          }}
+        >
+          <CardSet />
+          <CardSet />
+        </motion.div>
       </div>
 
-      {/* =========================
+      {/* =========================================
           HEADING
-      ========================== */}
+      ========================================== */}
+
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        initial={{
+          opacity: 0,
+          y: 24,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.4,
+        }}
         transition={{
           duration: 0.7,
           ease: [0.16, 1, 0.3, 1],
@@ -161,12 +194,14 @@ export default function ArcShowcase() {
         className="
           max-w-xl
           mx-auto
-          text-center
+          px-6
+
           flex
           flex-col
           items-center
           gap-4
-          px-6
+
+          text-center
         "
       >
         <h2
