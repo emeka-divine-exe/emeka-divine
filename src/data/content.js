@@ -1,3 +1,9 @@
+import churchFlyerMidweek from '../assets/images/showcase/church-flyer-midweek.png'
+import churchFlyerThanksgiving from '../assets/images/showcase/church-flyer-thanksgiving.png'
+import churchFlyerWorship from '../assets/images/showcase/church-flyer-worship.png'
+import jovisEateryLogo from '../assets/images/showcase/jovis-eatery-logo.png'
+import trueScholarsHubLogo from '../assets/images/showcase/true-scholars-hub-logo.png'
+
 export const profile = {
   name: "Divine",
   fullName: "Emeka Divine",
@@ -75,11 +81,11 @@ export const stats = [
 
 // ArcShowcase — pure visual gallery, no descriptions, no click-through
 export const showcaseImages = [
-  { src: "/assets/images/showcase/true-scholars-hub-logo.png", alt: "True Scholars Hub logo and wordmark" },
-  { src: "/assets/images/showcase/jovis-eatery-logo.png", alt: "Jovi's Eatery logo design" },
-  { src: "/assets/images/showcase/church-flyer-worship.jpg", alt: "Worship Sunday church flyer design" },
-  { src: "/assets/images/showcase/church-flyer-midweek.jpg", alt: "Midweek Service church flyer design" },
-  { src: "/assets/images/showcase/church-flyer-thanksgiving.jpg", alt: "Thanksgiving service church flyer design" },
+  { src: trueScholarsHubLogo, alt: "True Scholars Hub logo and wordmark" },
+  { src: jovisEateryLogo, alt: "Jovi's Eatery logo design" },
+  { src: churchFlyerWorship, alt: "Worship Sunday church flyer design" },
+  { src: churchFlyerMidweek, alt: "Midweek Service church flyer design" },
+  { src: churchFlyerThanksgiving, alt: "Thanksgiving service church flyer design" },
 ];
 
 export const projects = [
@@ -94,15 +100,15 @@ export const projects = [
     screenshot: "/assets/images/projects/logscity-screenshot.jpg",
   },
   {
-  id: "divine-homes",
-  title: "Divine Homes",
-  category: "Business Website · Full Stack",
-  description:
-    "A complete website for a building contractor and renovation company — hero, services carousel, about section, completed projects gallery, client testimonials, and a booking call-to-action, all in one polished site.",
-  image: "/assets/images/projects/divine-homes-cover.png",
-  liveUrl: "https://divine-homes.netlify.app",
-  screenshot: "/assets/images/projects/divine-homes-screenshot.jpg",
-},
+    id: "divine-homes",
+    title: "Divine Homes",
+    category: "Business Website · Full Stack",
+    description:
+      "A complete website for a building contractor and renovation company — hero, services carousel, about section, completed projects gallery, client testimonials, and a booking call-to-action, all in one polished site.",
+    image: "/assets/images/projects/divine-homes-cover.png",
+    liveUrl: "https://divine-homes.netlify.app",
+    screenshot: "/assets/images/projects/divine-homes-screenshot.jpg",
+  },
   {
     id: "taste-haven",
     title: "Taste Haven",
