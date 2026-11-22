@@ -1,10 +1,10 @@
-import Hero from "./components/Hero";
-import Works from "./components/Works";
-import Services from "./components/Services";
-import About from "./components/About";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Hero from "./Hero";
+import Works from "./Works";
+import Services from "./Services";
+import About from "./About";
+import Testimonials from "./Testimonials";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 export default function App() {
   return (
