@@ -91,19 +91,17 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.04 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
-        className="pointer-events-none absolute right-0 bottom-0 -z-10 h-[86%] w-full md:w-[62%] lg:w-[56%]"
+        className="pointer-events-none relative order-2 -mx-[15%] w-[130%] shrink-0 sm:mx-auto sm:w-[520px] md:absolute md:right-0 md:bottom-0 md:order-none md:mx-0 md:w-[62%] lg:right-[3%] lg:w-[56%]"
       >
         <img
           src={portrait}
           alt="Black-and-white portrait with a phone covering half the face"
-          className="h-full w-full object-cover object-right-top opacity-45 md:opacity-100"
+          className="block h-auto w-full"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black via-black/10 to-transparent md:via-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-black to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-1/6 bg-linear-to-b from-black to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black to-transparent" />
       </motion.div>
 
-      <div className={`${pad} flex flex-1 flex-col`}>
+      <div className={`${pad} relative z-10 order-1 flex flex-1 flex-col`}>
         <Nav />
         <div className="flex flex-1 flex-col justify-center py-10">
           <h1 className="font-mono text-[length:clamp(2.4rem,5.3vw,4.75rem)] leading-[1.4] font-bold">
@@ -136,7 +134,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className={`${pad} pb-6`}>
+      <div className={`${pad} relative z-10 order-3 pb-6`}>
         <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-center font-mono text-xs font-bold text-[#ccc] sm:text-sm md:grid-cols-4 lg:text-lg">
           {roles.map((r, i) => (
             <motion.li key={r} {...rise(0.8 + i * 0.1)}>{r}</motion.li>
