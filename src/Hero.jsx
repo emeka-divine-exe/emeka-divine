@@ -126,7 +126,7 @@ function Hero() {
             <motion.span {...rise(0.25)} className="block">Pixels...</motion.span>
           </h1>
           <motion.p {...rise(0.4)} className="mt-6 max-w-[34ch] font-sans text-lg leading-snug sm:text-xl md:max-w-lg">
-            I create cohesive brand identities and intuitive digital experiences through visual design and front-end development.
+            I create brand identities, logos, promotional designs, social media graphics, and websites that bring ideas to life.
           </motion.p>
           <motion.div {...rise(0.55)} className="mt-8">
             <TalkButton />
