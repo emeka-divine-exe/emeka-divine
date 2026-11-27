@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 import { testimonials } from "./testimonialsData.js";
 
 function Avatar({ t, size = "size-12" }) {
   return t.avatar ? (
     <img src={t.avatar} alt={t.name} className={`${size} rounded-full object-cover`} />
   ) : (
-    <span className={`${size} flex items-center justify-center rounded-full bg-white/10 font-mono font-bold`}>{t.name[0]}</span>
+    <span className={`${size} flex items-center justify-center rounded-full bg-white/10`}>
+      <Icon icon="ph:user-fill" className="text-2xl text-white/50" />
+    </span>
   );
 }
 
@@ -15,7 +18,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="overflow-hidden bg-black px-5 py-24 md:px-12 md:py-32">
       <div className="mx-auto max-w-[1440px] lg:px-[78px]">
-        <p className="font-mono text-sm text-acid">05 / Kind words</p>
+        <p className="font-mono text-sm text-acid">Kind words</p>
         <h2 className="mt-3 font-mono text-[length:clamp(2.2rem,4.5vw,3.75rem)] leading-[1.2] font-bold">Testimonials</h2>
       </div>
       <div className="mt-12 grid">

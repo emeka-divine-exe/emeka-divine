@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const portrait = "/hero-portrait.webp";
 
 const links = [["Home", "#home"], ["Meet Me", "#meet-me"], ["Archive", "#archive"]];
-const roles = ["Brand Designer", "Visual Designer", "Frontend Developer", "Graphics Designer"];
+const roles = ["Brand & Visual Designer", "Frontend Developer"];
 
 export function TalkButton({ href = "#contact", icon, children = "Let’s Talk" }) {
   const reach = {
@@ -104,11 +104,11 @@ function Hero() {
       <div className={`${pad} relative z-10 order-1 flex flex-1 flex-col`}>
         <Nav />
         <div className="flex flex-1 flex-col justify-center py-10">
-          <h1 className="font-mono text-[length:clamp(2.4rem,5.3vw,4.75rem)] leading-[1.4] font-bold">
+          <h1 className="font-mono text-[length:clamp(2.2rem,5vw,4.4rem)] leading-[1.3] font-bold">
             <motion.span {...rise(0.1)} className="block">
-              Design{" "}
+              I design{" "}
               <span className="relative inline-block">
-                Beyond
+                brands
                 <svg
                   viewBox="0 0 340 28"
                   preserveAspectRatio="none"
@@ -123,10 +123,11 @@ function Hero() {
                 </svg>
               </span>
             </motion.span>
-            <motion.span {...rise(0.25)} className="block">Pixels...</motion.span>
+            <motion.span {...rise(0.25)} className="block">and build</motion.span>
+            <motion.span {...rise(0.35)} className="block">websites.</motion.span>
           </h1>
           <motion.p {...rise(0.4)} className="mt-6 max-w-[34ch] font-sans text-lg leading-snug sm:text-xl md:max-w-lg">
-            I create brand identities, logos, promotional designs, social media graphics, and websites that bring ideas to life.
+            I create brand identities, visual designs and websites that bring ideas to life.
           </motion.p>
           <motion.div {...rise(0.55)} className="mt-8">
             <TalkButton />
@@ -135,7 +136,7 @@ function Hero() {
       </div>
 
       <div className={`${pad} relative z-10 order-3 pb-6`}>
-        <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-center font-mono text-xs font-bold text-[#ccc] sm:text-sm md:grid-cols-4 lg:text-lg">
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-center font-mono text-xs font-bold text-[#ccc] sm:text-sm lg:text-lg">
           {roles.map((r, i) => (
             <motion.li key={r} {...rise(0.8 + i * 0.1)}>{r}</motion.li>
           ))}

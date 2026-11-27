@@ -1,4 +1,4 @@
-// To add an image: upload it to the public folder, then add a line to the right group below.
+// Visual Design galleries. To add an image: upload it to the public folder, then add a line to the right group.
 export const designGroups = [
   {
     "title": "Church Countdown",
@@ -66,7 +66,7 @@ export const designGroups = [
     ]
   },
   {
-    "title": "Logos & Mockups",
+    "title": "FourBand Agency",
     "items": [
       {
         "src": "/logos-01.webp",
@@ -77,7 +77,12 @@ export const designGroups = [
         "src": "/logos-02.webp",
         "w": 1080,
         "h": 1080
-      },
+      }
+    ]
+  },
+  {
+    "title": "GDC Villa Hotel & Suites",
+    "items": [
       {
         "src": "/logos-03.webp",
         "w": 1080,
@@ -97,7 +102,12 @@ export const designGroups = [
         "src": "/logos-06.webp",
         "w": 1080,
         "h": 1352
-      },
+      }
+    ]
+  },
+  {
+    "title": "DDHM",
+    "items": [
       {
         "src": "/logos-07.webp",
         "w": 1080,
@@ -107,26 +117,6 @@ export const designGroups = [
         "src": "/logos-08.webp",
         "w": 1080,
         "h": 1080
-      }
-    ]
-  },
-  {
-    "title": "Jovi's Eatery",
-    "items": [
-      {
-        "src": "/jovis-01.webp",
-        "w": 1080,
-        "h": 1350
-      },
-      {
-        "src": "/jovis-02.webp",
-        "w": 1080,
-        "h": 1080
-      },
-      {
-        "src": "/jovis-03.webp",
-        "w": 1023,
-        "h": 1537
       }
     ]
   },
@@ -152,31 +142,6 @@ export const designGroups = [
         "src": "/verive-04.webp",
         "w": 1080,
         "h": 608
-      }
-    ]
-  },
-  {
-    "title": "True Scholars Hub",
-    "items": [
-      {
-        "src": "/tsh-01.webp",
-        "w": 1080,
-        "h": 1080
-      },
-      {
-        "src": "/tsh-02.webp",
-        "w": 1080,
-        "h": 270
-      },
-      {
-        "src": "/tsh-03.webp",
-        "w": 1080,
-        "h": 1250
-      },
-      {
-        "src": "/tsh-04.webp",
-        "w": 1080,
-        "h": 1350
       }
     ]
   },

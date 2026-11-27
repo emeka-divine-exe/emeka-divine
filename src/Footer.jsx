@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { site } from "./siteData.js";
 const portrait = "/hero-portrait.webp";
@@ -13,7 +14,7 @@ const links = [
 export default function Footer() {
   return (
     <footer className="bg-black p-3 md:p-5">
-      <div className="relative flex min-h-[740px] flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#0a0a0a] md:min-h-[600px]">
+      <div className="relative flex min-h-[740px] flex-col overflow-hidden rounded-[28px] border border-white/10 bg-black md:min-h-[600px]">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 -bottom-[0.12em] select-none text-center font-mono text-[clamp(3.2rem,12.5vw,13rem)] leading-none font-bold whitespace-nowrap text-white/[0.06]"
@@ -28,8 +29,14 @@ export default function Footer() {
         <div className="relative z-10 ml-auto w-full max-w-sm p-7 md:p-14">
           <p className="font-mono text-sm text-white/50">Find me online</p>
           <ul className="mt-5 space-y-3 font-mono">
-            {links.map(([icon, label, href]) => (
-              <li key={label}>
+            {links.map(([icon, label, href], i) => (
+              <motion.li
+                key={label}
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <a
                   href={href}
                   {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -39,12 +46,12 @@ export default function Footer() {
                   <span className="flex-1 break-all text-sm md:text-base">{label}</span>
                   <Icon icon="ph:arrow-up-right-bold" className="opacity-0 transition group-hover:opacity-100" />
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
-          <p className="mt-8 font-mono text-xs text-white/40">© 2026 Emeka Divine. All rights reserved.</p>
         </div>
       </div>
+      <p className="px-4 pt-5 pb-2 text-center font-mono text-xs text-white/40">© 2026 Emeka Divine. All rights reserved.</p>
     </footer>
   );
 }

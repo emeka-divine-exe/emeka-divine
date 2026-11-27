@@ -2,14 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { designGroups } from "./worksData.js";
+import { brandProjects, devProjects } from "./projectsData.js";
 
-// DEVELOPMENT: `image` is optional (e.g. "/works/dev/divine-homes.jpg").
-// Without it the card shows a scaled-down live view of the site.
-const dev = [
-  { name: "Divine Homes", url: "https://divine-homes.netlify.app", image: null },
-  { name: "Audio Pro", url: "https://audio-pro.netlify.app", image: null },
-  { name: "Taste Haven", url: "https://taste-haven-restaurant.vercel.app", image: null },
-];
+let lastTab = "Design";
 
 const reveal = (i = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -18,31 +13,82 @@ const reveal = (i = 0) => ({
   transition: { duration: 0.5, delay: (i % 4) * 0.06 },
 });
 
+function ProjectCard({ p, i }) {
+  const external = Boolean(p.behance);
+  return (
+    <motion.a
+      {...reveal(i)}
+      href={external ? p.behance : `#/work/${p.slug}`}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="group block"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-[#0b0b0b] transition-colors group-hover:border-acid">
+        {p.cover ? (
+          <img src={p.cover} alt={`${p.title} cover`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        ) : (
+          <iframe
+            src={p.url}
+            title={`${p.title} live preview`}
+            loading="lazy"
+            tabIndex={-1}
+            aria-hidden="true"
+            className="pointer-events-none absolute top-0 left-0 h-[333.34%] w-[333.34%] origin-top-left scale-[0.3] border-0 bg-white"
+          />
+        )}
+      </div>
+      <div className="mt-4 flex items-start justify-between gap-4 font-mono">
+        <div>
+          <h4 className="text-xl font-bold md:text-2xl">{p.title}</h4>
+          <p className="mt-1 text-sm text-white/50">{p.kind}</p>
+        </div>
+        <Icon icon="ph:arrow-up-right-bold" className="mt-1 shrink-0 text-2xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-acid" />
+      </div>
+    </motion.a>
+  );
+}
+
+function Sub({ title, text }) {
+  return (
+    <div className="mb-8 border-b border-white/15 pb-4">
+      <h3 className="font-mono text-2xl font-bold md:text-3xl">{title}</h3>
+      {text && <p className="mt-2 text-sm text-white/50 md:text-base">{text}</p>}
+    </div>
+  );
+}
+
 function Design() {
   return (
-    <div className="space-y-16">
-      {designGroups.map((g) => (
-        <div key={g.title}>
-          <div className="mb-5 flex items-baseline justify-between border-b border-white/15 pb-3 font-mono">
-            <h3 className="text-lg font-bold md:text-2xl">{g.title}</h3>
-            <span className="text-sm text-acid">{String(g.items.length).padStart(2, "0")}</span>
-          </div>
-          <div className="columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4">
-            {g.items.map((it, i) => (
-              <motion.img
-                key={it.src}
-                {...reveal(i)}
-                src={it.src}
-                width={it.w}
-                height={it.h}
-                alt={`${g.title} ${i + 1}`}
-                loading="lazy"
-                className="mb-3 block h-auto w-full break-inside-avoid rounded-lg border border-white/10 md:mb-4"
-              />
-            ))}
-          </div>
+    <div className="space-y-24">
+      <div>
+        <Sub title="Brand Design" text="Brand projects, presented in full." />
+        <div className="grid gap-8 md:grid-cols-2">
+          {brandProjects.map((p, i) => <ProjectCard key={p.slug} p={p} i={i} />)}
         </div>
-      ))}
+      </div>
+      <div>
+        <Sub title="Visual Design" text="Logos, posters and social media graphics." />
+        <div className="space-y-14">
+          {designGroups.map((g) => (
+            <div key={g.title}>
+              <h4 className="mb-5 font-mono text-lg font-bold text-white/80 md:text-xl">{g.title}</h4>
+              <div className="grid grid-cols-2 items-start gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+                {g.items.map((it, i) => (
+                  <motion.img
+                    key={it.src}
+                    {...reveal(i)}
+                    src={it.src}
+                    width={it.w}
+                    height={it.h}
+                    alt={`${g.title} ${i + 1}`}
+                    loading="lazy"
+                    className="block h-auto w-full rounded-lg border border-white/10"
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -50,54 +96,20 @@ function Design() {
 function Dev() {
   return (
     <div className="grid gap-8 md:grid-cols-3 md:gap-6">
-      {dev.map((p, i) => (
-        <motion.a
-          key={p.name}
-          {...reveal(i)}
-          href={p.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block"
-        >
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-[#0b0b0b] transition-colors group-hover:border-acid">
-            {p.image ? (
-              <img src={p.image} alt={`${p.name} preview`} className="h-full w-full object-cover object-top" />
-            ) : (
-              <iframe
-                src={p.url}
-                title={`${p.name} live preview`}
-                loading="lazy"
-                tabIndex={-1}
-                aria-hidden="true"
-                className="pointer-events-none absolute top-0 left-0 h-[333.34%] w-[333.34%] origin-top-left scale-[0.3] border-0 bg-white"
-              />
-            )}
-          </div>
-          <div className="mt-4 flex items-start justify-between gap-4 font-mono">
-            <div>
-              <span className="text-sm text-acid">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="text-xl font-bold md:text-2xl">{p.name}</h3>
-              <p className="text-sm text-white/50">{new URL(p.url).host}</p>
-            </div>
-            <Icon
-              icon="ph:arrow-up-right-bold"
-              className="mt-1 text-2xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-acid"
-            />
-          </div>
-        </motion.a>
-      ))}
+      {devProjects.map((p, i) => <ProjectCard key={p.slug} p={p} i={i} />)}
     </div>
   );
 }
 
 export default function Works() {
-  const [tab, setTab] = useState("Design");
+  const [tab, setTabState] = useState(lastTab);
+  const setTab = (t) => { lastTab = t; setTabState(t); };
   return (
     <section id="archive" className="bg-black px-5 py-24 md:px-12 md:py-32 lg:px-[78px]">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono text-sm text-acid">02 / Selected work</p>
+            <p className="font-mono text-sm text-acid">Selected work</p>
             <h2 className="mt-3 font-mono text-[length:clamp(2.2rem,4.5vw,3.75rem)] leading-[1.2] font-bold">Archive</h2>
           </div>
           <div role="tablist" className="flex gap-8 font-mono text-lg">

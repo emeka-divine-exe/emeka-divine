@@ -3,10 +3,9 @@ const portrait = "/about-portrait.webp";
 
 const stats = [["3+", "Years of experience"], ["10–15", "People I’ve worked with"], ["98%", "Client satisfaction"]];
 const story = [
-  "I started with graphic design in junior secondary school, picked up the basics at two learning centres, then kept learning on my own.",
-  "At some point I wanted my designs to actually work on a screen, so I moved into web: HTML, CSS, JavaScript, Tailwind and React, which I’m still mastering. TypeScript is next, then Next.js.",
-  "The goal is software engineering. To me that means design and development together, and I want to be strong at both.",
-  "I genuinely love this work. When I’m stressed or confused, I build or design something. If you ask for my hobby, it’s probably Pinterest, scrolling other people’s work until I want to make my own.",
+  "I’m Emeka, a brand and visual designer who also builds websites. I started in graphic design and learned to code so I could take my own designs all the way to a working site.",
+  "I’m creative, but I’m also careful. I notice the small things: spacing, alignment, how a logo holds up on a phone screen and on a banner. When something isn’t working, I take it apart until I know why.",
+  "I’d rather give a little more than the brief asks than a little less, and I enjoy the work, which is why the details get attention.",
 ];
 
 export default function About() {
@@ -23,12 +22,12 @@ export default function About() {
           <img src={portrait} alt="Emeka Divine holding a teal phone in front of his face" className="h-[92%] w-auto max-w-none object-contain object-bottom" />
         </motion.div>
         <div className="flex flex-col justify-center">
-          <p className="font-mono text-sm text-acid">04 / Meet me</p>
+          <p className="font-mono text-sm text-acid">Meet me</p>
           <h2 className="mt-3 font-mono text-[length:clamp(2.2rem,4.5vw,3.75rem)] leading-[1.2] font-bold">I’m Emeka.</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-white/80 md:text-lg">
             {story.map((p) => <p key={p.slice(0, 20)}>{p}</p>)}
           </div>
-          <dl className="mt-10 grid grid-cols-3 gap-3">
+          <dl className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
             {stats.map(([n, l], i) => (
               <motion.div
                 key={l}
@@ -36,10 +35,10 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-2xl border border-white/10 bg-[#0b0b0b] p-4 md:p-5"
+                className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#0b0b0b] p-4 sm:block md:p-5"
               >
-                <dt className="font-mono text-2xl font-bold text-acid md:text-4xl">{n}</dt>
-                <dd className="mt-2 font-mono text-[11px] leading-snug text-white/60 md:text-sm">{l}</dd>
+                <dt className="min-w-20 font-mono text-3xl font-bold text-acid sm:min-w-0 md:text-4xl">{n}</dt>
+                <dd className="font-mono text-sm leading-snug text-white/60 sm:mt-2">{l}</dd>
               </motion.div>
             ))}
           </dl>
