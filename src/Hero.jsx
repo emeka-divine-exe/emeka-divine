@@ -119,7 +119,7 @@ function Hero() {
   });
   const pad = "mx-auto w-full max-w-[1440px] px-5 md:px-12 lg:px-[78px]";
   return (
-    <section id="home" className="relative isolate flex min-h-svh flex-col overflow-hidden bg-black">
+    <section id="home" className="relative isolate flex min-h-svh flex-col overflow-x-clip bg-black">
       <motion.div
         initial={{ opacity: 0, scale: 1.04 }}
         animate={{ opacity: 1, scale: 1 }}
