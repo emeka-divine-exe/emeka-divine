@@ -6,6 +6,7 @@ const portrait = "/hero-portrait.webp";
 const links = [
   ["mdi:linkedin", "LinkedIn", site.linkedin],
   ["ri:twitter-x-fill", "Twitter", site.twitter],
+  ["mdi:github", "Github", site.github],
   ["ic:baseline-whatsapp", "WhatsApp", site.whatsapp],
   ["mdi:email-outline", site.email, `mailto:${site.email}`],
   ["mdi:phone-outline", site.phone, `tel:${site.phone.replace(/\s/g, "")}`],
