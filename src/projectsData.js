@@ -7,8 +7,7 @@ export const brandProjects = [
     "kind": "Brand identity",
     "cover": "/jovis-02.webp",
     "behance": "",
-    "brief": "A friend who was getting ready to launch her business asked me to build a brand for it.",
-    "delivered": "Naming, logo, typography, colour palette, packaging, patterns and brand mockups. I did more than she asked so the project could also stand as proof of my work.",
+    "brief": "A friend preparing to launch her own business, Jovi’s Eatery, asked me to develop its brand identity from scratch, starting with the name. I took the project beyond the original scope to build a complete brand system.",
     "tools": [
       "Canva",
       "ChatGPT"
@@ -29,6 +28,15 @@ export const brandProjects = [
         "w": 1023,
         "h": 1537
       }
+    ],
+    "deliverables": [
+      "Brand name",
+      "Logo design",
+      "Typography",
+      "Colour palette",
+      "Packaging design",
+      "Brand patterns",
+      "Brand mockups: aprons, cups, boxes and packaging"
     ]
   },
   {
@@ -37,8 +45,7 @@ export const brandProjects = [
     "kind": "Logo and flyers",
     "cover": "/tsh-01.webp",
     "behance": "",
-    "brief": "One of my teachers was starting a small lesson centre and needed a logo and flyers to promote home and online lessons.",
-    "delivered": "A logo in stacked and horizontal versions with a colour palette, plus two promotional flyers.",
+    "brief": "A teacher of mine was starting a lesson centre and needed a brand to launch with. I created the logo and the promotional flyers for its home and online lessons.",
     "tools": [
       "Canva",
       "ChatGPT"
@@ -64,6 +71,11 @@ export const brandProjects = [
         "w": 1080,
         "h": 1350
       }
+    ],
+    "deliverables": [
+      "Logo in stacked and horizontal versions",
+      "Colour palette",
+      "Two promotional flyers"
     ]
   }
 ];
@@ -76,8 +88,12 @@ export const devProjects = [
     "url": "https://divine-homes.netlify.app",
     "cover": null,
     "code": "",
-    "brief": "",
-    "delivered": "A website built with React.",
+    "brief": "A website for Divine Homes, built with React and styled with Tailwind CSS.",
+    "deliverables": [
+      "Website built with React",
+      "Styled with Tailwind CSS",
+      "Deployed on Netlify"
+    ],
     "tools": [
       "HTML",
       "CSS",
@@ -93,8 +109,12 @@ export const devProjects = [
     "url": "https://audio-pro.netlify.app",
     "cover": null,
     "code": "",
-    "brief": "I saw a UI/UX design on TikTok and decided to recreate it as a working website. I’m still refining it.",
-    "delivered": "A working recreation of that design, with animations.",
+    "brief": "A front-end recreation of a UI/UX concept I came across on TikTok. The build is still being refined.",
+    "deliverables": [
+      "Design recreated in HTML, CSS and JavaScript",
+      "Interface animations with Animate.css",
+      "Deployed on Netlify"
+    ],
     "tools": [
       "HTML",
       "CSS",
@@ -109,8 +129,12 @@ export const devProjects = [
     "url": "https://taste-haven-restaurant.vercel.app",
     "cover": null,
     "code": "",
-    "brief": "A personal project: a simple restaurant website.",
-    "delivered": "A simple restaurant website.",
+    "brief": "A restaurant website built as a personal project.",
+    "deliverables": [
+      "Restaurant website built with HTML, CSS and JavaScript",
+      "Styled with Tailwind CSS",
+      "Deployed on Vercel"
+    ],
     "tools": [
       "HTML",
       "CSS",

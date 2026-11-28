@@ -1,8 +1,9 @@
 import { Icon } from "@iconify/react";
 import Footer from "./Footer";
 import { brandProjects, devProjects } from "./projectsData.js";
+import { designCollections } from "./worksData.js";
 
-const all = [...brandProjects, ...devProjects];
+const all = [...brandProjects, ...devProjects, ...designCollections];
 
 function Block({ label, children }) {
   if (!children) return null;
@@ -29,18 +30,33 @@ export default function ProjectPage({ slug }) {
           ) : (
             <>
               <h1 className="mt-10 font-mono text-[length:clamp(2.2rem,5vw,4rem)] leading-[1.15] font-bold">{p.title}</h1>
-              <p className="mt-3 font-mono text-sm text-white/50">{p.kind}</p>
-              <div className="mt-10 grid gap-8 md:grid-cols-3">
-                <Block label="The brief">{p.brief}</Block>
-                <Block label="What I delivered">{p.delivered}</Block>
-                <Block label="Tools">
-                  {p.tools.length ? (
-                    <ul className="flex flex-wrap gap-2">
-                      {p.tools.map((t) => <li key={t} className="rounded-full bg-white/10 px-3 py-1 font-mono text-sm">{t}</li>)}
-                    </ul>
-                  ) : null}
-                </Block>
-              </div>
+              {p.kind && <p className="mt-3 font-mono text-sm text-white/50">{p.kind}</p>}
+              {(p.brief || p.deliverables || p.tools) && (
+                <div className="mt-10 grid gap-10 md:grid-cols-2">
+                  <div className="space-y-8">
+                    <Block label="Overview">{p.brief}</Block>
+                    <Block label="Tools">
+                      {p.tools?.length ? (
+                        <ul className="flex flex-wrap gap-2">
+                          {p.tools.map((t) => <li key={t} className="rounded-full bg-white/10 px-3 py-1 font-mono text-sm">{t}</li>)}
+                        </ul>
+                      ) : null}
+                    </Block>
+                  </div>
+                  <Block label="Deliverables">
+                    {p.deliverables?.length ? (
+                      <ul className="space-y-3">
+                        {p.deliverables.map((d) => (
+                          <li key={d} className="flex items-start gap-3">
+                            <Icon icon="ph:check-circle-fill" className="mt-1 shrink-0 text-xl text-acid" />
+                            {d}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </Block>
+                </div>
+              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 {p.url && (
                   <a href={p.url} target="_blank" rel="noopener noreferrer" className={`${btn} bg-acid text-black hover:bg-white`}>
@@ -59,7 +75,7 @@ export default function ProjectPage({ slug }) {
                 )}
               </div>
               {p.images ? (
-                <div className="mt-12 grid items-start gap-4 md:grid-cols-2">
+                <div className={`mt-12 grid items-start gap-4 ${p.images.length > 4 ? "grid-cols-2 md:grid-cols-3" : "md:grid-cols-2"}`}>
                   {p.images.map((im, i) => (
                     <img key={im.src} src={im.src} width={im.w} height={im.h} alt={`${p.title} ${i + 1}`} loading="lazy" className="block h-auto w-full rounded-lg border border-white/10" />
                   ))}

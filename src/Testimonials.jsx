@@ -4,8 +4,9 @@ import { Icon } from "@iconify/react";
 import { testimonials } from "./testimonialsData.js";
 
 function Avatar({ t, size = "size-12" }) {
-  return t.avatar ? (
-    <img src={t.avatar} alt={t.name} className={`${size} rounded-full object-cover`} />
+  const [bad, setBad] = useState(false);
+  return t.avatar && !bad ? (
+    <img src={t.avatar} alt="" onError={() => setBad(true)} className={`${size} rounded-full object-cover`} />
   ) : (
     <span className={`${size} flex items-center justify-center rounded-full bg-white/10`}>
       <Icon icon="ph:user-fill" className="text-2xl text-white/50" />

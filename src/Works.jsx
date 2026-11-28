@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import { designGroups } from "./worksData.js";
+import { designCollections } from "./worksData.js";
 import { brandProjects, devProjects } from "./projectsData.js";
 
 let lastTab = "Design";
@@ -13,7 +13,8 @@ const reveal = (i = 0) => ({
   transition: { duration: 0.5, delay: (i % 4) * 0.06 },
 });
 
-function ProjectCard({ p, i }) {
+function ProjectCard({ p, i, ratio = "aspect-[4/3]" }) {
+  const small = ratio === "aspect-square";
   const external = Boolean(p.behance);
   return (
     <motion.a
@@ -22,7 +23,7 @@ function ProjectCard({ p, i }) {
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className="group block"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-[#0b0b0b] transition-colors group-hover:border-acid">
+      <div className={`relative ${ratio} overflow-hidden rounded-lg border border-white/10 bg-[#0b0b0b] transition-colors group-hover:border-acid`}>
         {p.cover ? (
           <img src={p.cover} alt={`${p.title} cover`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
         ) : (
@@ -38,8 +39,8 @@ function ProjectCard({ p, i }) {
       </div>
       <div className="mt-4 flex items-start justify-between gap-4 font-mono">
         <div>
-          <h4 className="text-xl font-bold md:text-2xl">{p.title}</h4>
-          <p className="mt-1 text-sm text-white/50">{p.kind}</p>
+          <h4 className={small ? "text-base font-bold md:text-lg" : "text-xl font-bold md:text-2xl"}>{p.title}</h4>
+          {p.kind && <p className="mt-1 text-sm text-white/50">{p.kind}</p>}
         </div>
         <Icon icon="ph:arrow-up-right-bold" className="mt-1 shrink-0 text-2xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-acid" />
       </div>
@@ -66,27 +67,9 @@ function Design() {
         </div>
       </div>
       <div>
-        <Sub title="Visual Design" text="Logos, posters and social media graphics." />
-        <div className="space-y-14">
-          {designGroups.map((g) => (
-            <div key={g.title}>
-              <h4 className="mb-5 font-mono text-lg font-bold text-white/80 md:text-xl">{g.title}</h4>
-              <div className="grid grid-cols-2 items-start gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-                {g.items.map((it, i) => (
-                  <motion.img
-                    key={it.src}
-                    {...reveal(i)}
-                    src={it.src}
-                    width={it.w}
-                    height={it.h}
-                    alt={`${g.title} ${i + 1}`}
-                    loading="lazy"
-                    className="block h-auto w-full rounded-lg border border-white/10"
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+        <Sub title="Visual Design" text="Logos, posters and social media graphics, grouped by collection." />
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+          {designCollections.map((c, i) => <ProjectCard key={c.slug} p={c} i={i} ratio="aspect-square" />)}
         </div>
       </div>
     </div>

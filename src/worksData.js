@@ -1,8 +1,11 @@
-// Visual Design galleries. To add an image: upload it to the public folder, then add a line to the right group.
-export const designGroups = [
+// Visual Design collections. To add an image: upload it to the public folder, then add a line to the right collection.
+export const designCollections = [
   {
+    "slug": "church-countdown",
     "title": "Church Countdown",
-    "items": [
+    "kind": "",
+    "cover": "/countdown-01.webp",
+    "images": [
       {
         "src": "/countdown-01.webp",
         "w": 1080,
@@ -41,8 +44,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "birthday-designs",
     "title": "Birthday Designs",
-    "items": [
+    "kind": "",
+    "cover": "/birthday-01.webp",
+    "images": [
       {
         "src": "/birthday-01.webp",
         "w": 1080,
@@ -66,8 +72,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "fourband-agency",
     "title": "FourBand Agency",
-    "items": [
+    "kind": "",
+    "cover": "/logos-01.webp",
+    "images": [
       {
         "src": "/logos-01.webp",
         "w": 1080,
@@ -81,8 +90,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "gdc-villa-hotel",
     "title": "GDC Villa Hotel & Suites",
-    "items": [
+    "kind": "",
+    "cover": "/logos-03.webp",
+    "images": [
       {
         "src": "/logos-03.webp",
         "w": 1080,
@@ -106,8 +118,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "ddhm",
     "title": "DDHM",
-    "items": [
+    "kind": "",
+    "cover": "/logos-07.webp",
+    "images": [
       {
         "src": "/logos-07.webp",
         "w": 1080,
@@ -121,8 +136,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "verive",
     "title": "Verive",
-    "items": [
+    "kind": "",
+    "cover": "/verive-01.webp",
+    "images": [
       {
         "src": "/verive-01.webp",
         "w": 1080,
@@ -146,8 +164,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "church-service-flyers",
     "title": "Church Service Flyers",
-    "items": [
+    "kind": "",
+    "cover": "/services-01.webp",
+    "images": [
       {
         "src": "/services-01.webp",
         "w": 736,
@@ -181,8 +202,11 @@ export const designGroups = [
     ]
   },
   {
+    "slug": "sermon-notes",
     "title": "Sermon Notes",
-    "items": [
+    "kind": "",
+    "cover": "/sermon-01.webp",
+    "images": [
       {
         "src": "/sermon-01.webp",
         "w": 1080,

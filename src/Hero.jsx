@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 const portrait = "/hero-portrait.webp";
 
@@ -78,7 +78,40 @@ function Nav() {
   );
 }
 
+const lines = [
+  ["I design brands that ", "stand out", "."],
+  ["I build websites that ", "deliver results", "."],
+];
+
+function Line({ parts, active }) {
+  const [a, b, c] = parts;
+  return (
+    <motion.span
+      aria-hidden={!active}
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: active ? 1 : 0, y: active ? 0 : 16 }}
+      transition={{ duration: 0.5, delay: active ? 0.1 : 0 }}
+      className="col-start-1 row-start-1 block"
+    >
+      {a}
+      <span className="relative inline-block">
+        {b}
+        <svg viewBox="0 0 340 28" preserveAspectRatio="none" fill="none" stroke="currentColor" strokeLinecap="round" aria-hidden="true" className="absolute top-[78%] -left-[3%] h-[0.4em] w-[106%] overflow-visible text-acid">
+          <motion.path d="M3 11C70 5 190 7 337 8" strokeWidth="4" initial={{ pathLength: 0 }} animate={{ pathLength: active ? 1 : 0 }} transition={{ duration: 0.7, delay: active ? 0.6 : 0 }} />
+          <motion.path d="M44 23C130 19 230 20 300 21" strokeWidth="6" initial={{ pathLength: 0 }} animate={{ pathLength: active ? 1 : 0 }} transition={{ duration: 0.7, delay: active ? 0.8 : 0 }} />
+        </svg>
+      </span>
+      {c}
+    </motion.span>
+  );
+}
+
 function Hero() {
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setCurrent((v) => (v + 1) % lines.length), 4000);
+    return () => clearInterval(t);
+  }, []);
   const rise = (d) => ({
     initial: { opacity: 0, y: 28 },
     animate: { opacity: 1, y: 0 },
@@ -104,30 +137,11 @@ function Hero() {
       <div className={`${pad} relative z-10 order-1 flex flex-1 flex-col`}>
         <Nav />
         <div className="flex flex-1 flex-col justify-center py-10">
-          <h1 className="font-mono text-[length:clamp(2.2rem,5vw,4.4rem)] leading-[1.3] font-bold">
-            <motion.span {...rise(0.1)} className="block">
-              I design{" "}
-              <span className="relative inline-block">
-                brands
-                <svg
-                  viewBox="0 0 340 28"
-                  preserveAspectRatio="none"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  aria-hidden="true"
-                  className="absolute top-[78%] -left-[18%] h-[0.4em] w-[122%] overflow-visible text-acid"
-                >
-                  <motion.path d="M3 11C70 5 190 7 337 8" strokeWidth="4" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 0.9 }} />
-                  <motion.path d="M44 23C130 19 230 20 300 21" strokeWidth="6" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 1.1 }} />
-                </svg>
-              </span>
-            </motion.span>
-            <motion.span {...rise(0.25)} className="block">and build</motion.span>
-            <motion.span {...rise(0.35)} className="block">websites.</motion.span>
+          <h1 className="grid max-w-[22ch] font-mono text-[length:clamp(1.6rem,4vw,3.4rem)] leading-[1.3] font-bold">
+            {lines.map((parts, k) => <Line key={k} parts={parts} active={k === current} />)}
           </h1>
           <motion.p {...rise(0.4)} className="mt-6 max-w-[34ch] font-sans text-lg leading-snug sm:text-xl md:max-w-lg">
-            I create brand identities, visual designs and websites that bring ideas to life.
+            I create brand identities, visual designs and websites that help businesses look professional and attract customers.
           </motion.p>
           <motion.div {...rise(0.55)} className="mt-8">
             <TalkButton />
