@@ -42,7 +42,7 @@ export function TalkButton({ href = "#contact", icon, children = "Let’s Talk" 
 function Nav() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="relative z-20 grid grid-cols-[1fr_auto] items-center py-6 md:grid-cols-3 md:py-8">
+    <header className="sticky top-0 z-20 grid grid-cols-[1fr_auto] items-center py-6 md:grid-cols-3 md:py-8">
       <a href="#home" className="font-mono text-2xl font-bold text-acid">edx</a>
       <nav className="hidden justify-self-center gap-8 font-mono text-lg md:flex">
         {links.map(([t, h]) => (
