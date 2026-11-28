@@ -5,4 +5,5 @@ export const site = {
   phone: "+234 816 938 3907",
   linkedin: "https://www.linkedin.com/in/chukwuemeka-divine-7a6992370",
   twitter: "https://x.com/emekadivine_exe",
+  github: "https://github.com/emeka-divine-exe",
 };
